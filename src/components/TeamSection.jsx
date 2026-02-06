@@ -20,7 +20,7 @@ export default function TeamSection() {
       name: "Dr. Gara Madhu Prabhakar Babu",
       role: "Medical Co-Founder",
       desc: "Provides clinical oversight for predictive models, telemedicine workflows, and patient safety.",
-      social: "https://www.linkedin.com/in/gara-madhu-prabhakar-babu/",
+      social: "#",
     },
     {
       image: ramesh,
