@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Linkedin, Globe, ShieldCheck } from "lucide-react";
 import chandu from "../assets/team/Chandra-sekhar-Kola.jpeg";
 import madhu from "../assets/team/Madhu-Prabhakar-Babu-Gara.jpeg";
+import ramesh from "../assets/team/Ramesh_Ayyala_2.jpg";
+import manasa from "../assets/team/manasa-ghanta1.png";
 
 // Replace these with your actual local asset paths
 
@@ -24,10 +26,18 @@ export default function TeamSection() {
       social: "#",
     },
     {
-      image: "https://i.pravatar.cc/300",
-      name: "Beulah Munnangi",
-      role: "Strategy & Operations",
-      desc: "Architecting the business model and operational scale-up for national health impact.",
+      image: ramesh,
+      name: "Ramesh Ayyala",
+      role: "Chief Technology Officer (CTO)",
+      desc: "Leading the technical architecture and development of RA-PHA's cutting-edge platform.",
+      color: "#F59E0B",
+      social: "https://www.linkedin.com/in/ramesh-naidu-ayyala/",
+    },
+    {
+      image: manasa,
+      name: "Manasa Ghanta",
+      role: "Technology & Operations Lead",
+      desc: "Driving RA-PHA's technology development and operational excellence to ensure seamless user experiences.",
       color: "#38BDF8",
       social: "#",
     },
@@ -67,50 +77,60 @@ export default function TeamSection() {
         </div>
 
         {/* Member Cards */}
-        <div className="grid md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {members.map((m, idx) => (
             <motion.div
               key={m.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
+              transition={{ delay: idx * 0.1, duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true }}
               className="group relative"
             >
-              {/* Card Decoration */}
+              {/* Card Glow Border */}
               <div className="absolute -inset-1 bg-gradient-to-b from-white/10 to-transparent rounded-[2.5rem] -z-10 group-hover:from-cyan-500/20 transition-all duration-500" />
 
-              <div className="bg-slate-900/50 backdrop-blur-xl border border-white/5 p-8 rounded-[2rem] h-full flex flex-col items-center text-center">
+              {/* Card */}
+              <div className="bg-slate-900/50 backdrop-blur-xl border border-white/5 p-8 rounded-[2rem] h-full flex flex-col items-center text-center hover:-translate-y-2 transition-transform duration-300">
+                {/* Avatar */}
                 <div className="relative mb-6">
-                  <div className="absolute inset-0 bg-cyan-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 bg-cyan-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <img
                     src={m.image}
                     alt={m.name}
-                    className="size-34 rounded-full object-cover border-2 border-white/10 group-hover:border-cyan-400/50 transition-all"
+                    className="w-32 h-32 rounded-full object-cover border-2 border-white/10 group-hover:border-cyan-400/50 transition-all duration-300"
                   />
                 </div>
 
+                {/* Name */}
                 <h3 className="text-xl font-bold text-white mb-1">{m.name}</h3>
+
+                {/* Role */}
                 <p className="text-cyan-400 text-xs font-bold uppercase tracking-widest mb-4">
                   {m.role}
                 </p>
+
+                {/* Description */}
                 <p className="text-slate-400 text-sm leading-relaxed mb-8 flex-1">
                   {m.desc}
                 </p>
 
+                {/* Social */}
                 <div className="flex gap-4">
                   <a
                     href={m.social}
-                    className="p-2 bg-white/5 rounded-lg hover:bg-cyan-500/20 hover:text-cyan-400 transition-all"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${m.name} LinkedIn profile`}
+                    className="p-2 bg-white/5 rounded-lg hover:bg-cyan-500/20 hover:text-cyan-400 transition-all duration-300"
                   >
-                    <Linkedin className="size-5" />
+                    <Linkedin className="w-5 h-5" />
                   </a>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
-
         {/* Advisory Network Footer */}
         <motion.div
           initial={{ opacity: 0 }}
