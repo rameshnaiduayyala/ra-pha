@@ -35,7 +35,7 @@ export default function TestimonialSection() {
       <div className="relative z-10 max-w-7xl mx-auto">
         
         {/* ===== HEADER ===== */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-16">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
