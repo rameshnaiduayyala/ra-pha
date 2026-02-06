@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { AlertCircle, Clock, Smartphone, Ban } from "lucide-react";
+import CountUp from "./CountUp";
 
 export default function ProblemSection() {
-  // Data aligned with the Problem Statement Section 
+  // Data aligned with the Problem Statement Section
   const painPoints = [
     {
       title: "Delayed Diagnosis",
@@ -14,7 +15,6 @@ export default function ProblemSection() {
       title: "Lack of Continuous Monitoring",
       desc: "Healthcare is currently episodic; there is no 24/7 oversight of vital health trends.",
       icon: AlertCircle,
-      ref: "[cite: 11]",
     },
     {
       title: "Fragmented Health Ecosystem",
@@ -30,16 +30,36 @@ export default function ProblemSection() {
     },
   ];
 
-  // Metrics aligned with Roadmap and Market Opportunity [cite: 21, 36, 47]
+  // Metrics aligned with Roadmap and Market Opportunity
   const marketStats = [
-    { num: "$500B+", label: "Digital Health Market (2027)" },
-    { num: "3 Mo", label: "MVP Development Timeline" },
-    { num: "0-299", label: "Monthly Subscription (INR)" },
-    { num: "10K+", label: "Target Users (Year 1)" },
+    {
+      value: 500,
+      prefix: "$",
+      suffix: "B+",
+      label: "Digital Health Market (2027)",
+    }, //
+    {
+      value: 3,
+      suffix: " Mo",
+      label: "MVP Development Timeline",
+    }, // [cite: 37, 47]
+    {
+      value: 299,
+      prefix: "₹0-",
+      label: "Monthly Subscription (INR)",
+    }, //
+    {
+      value: 10000,
+      suffix: "+",
+      label: "Target Users (Year 1)",
+    }, //
   ];
 
   return (
-    <section id="problem" className="relative bg-[#F8FAFC] py-24 px-6 overflow-hidden">
+    <section
+      id="problem"
+      className="relative bg-[#F8FAFC] py-24 px-6 overflow-hidden"
+    >
       {/* Background Decorative Element */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-50 pointer-events-none">
         <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-[120px]" />
@@ -48,8 +68,7 @@ export default function ProblemSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          
-          {/* LEFT SIDE — Pain Points [cite: 56] */}
+          {/* LEFT SIDE — Pain Points */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -61,8 +80,9 @@ export default function ProblemSection() {
               <span className="text-blue-600">Fails You.</span>
             </h2>
             <p className="text-lg text-slate-600 mb-10 max-w-lg">
-              The modern world is reactive. We wait for symptoms instead of preventing them. 
-              RA-PHA is built to bridge the gap between wellness and medical intervention
+              The modern world is reactive. We wait for symptoms instead of
+              preventing them. RA-PHA is built to bridge the gap between
+              wellness and medical intervention
             </p>
 
             <div className="grid gap-6">
@@ -79,15 +99,19 @@ export default function ProblemSection() {
                     <point.icon className="w-6 h-6 text-slate-400 group-hover:text-white" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-slate-900 text-lg">{point.title}</h3>
-                    <p className="text-slate-500 text-sm leading-relaxed">{point.desc}</p>
+                    <h3 className="font-bold text-slate-900 text-lg">
+                      {point.title}
+                    </h3>
+                    <p className="text-slate-500 text-sm leading-relaxed">
+                      {point.desc}
+                    </p>
                   </div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
-          {/* RIGHT SIDE — Market & Vision Metrics [cite: 25, 47] */}
+          {/* RIGHT SIDE — Market & Vision Metrics */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -97,35 +121,67 @@ export default function ProblemSection() {
           >
             <div className="bg-white p-8 md:p-12 rounded-[2rem] border border-slate-200 shadow-xl relative overflow-hidden">
               {/* Subtle Grid Background */}
-              <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-                   style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
-              
+              <div
+                className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                style={{
+                  backgroundImage: "radial-gradient(#000 1px, transparent 1px)",
+                  backgroundSize: "20px 20px",
+                }}
+              />
+
               <div className="relative z-10">
                 <div className="inline-block px-4 py-1.5 bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-widest rounded-full mb-6">
-                  Market Scale & Potential [cite: 21]
+                  Market Scale & Potential
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 mb-8">
-                  Building India&apos;s Next HealthTech Giant 
+                  Building India&apos;s Next HealthTech Giant
                 </h3>
 
                 <div className="grid grid-cols-2 gap-8">
                   {marketStats.map((stat, idx) => (
-                    <div key={idx} className="border-l-2 border-blue-100 pl-6">
-                      <div className="text-3xl font-black text-slate-900">{stat.num}</div>
-                      <p className="text-xs font-bold text-slate-400 uppercase tracking-tighter mt-1">{stat.label}</p>
+                    <div
+                      key={idx}
+                      className="border-l-2 border-blue-100 pl-6 group"
+                    >
+                      <div className="text-3xl font-black text-slate-900 flex items-baseline">
+                        {stat.prefix && (
+                          <span className="text-2xl mr-1">{stat.prefix}</span>
+                        )}
+                        <CountUp
+                          from={0}
+                          to={stat.value}
+                          separator=","
+                          duration={1.5}
+                          className="count-up-text"
+                          startCounting
+                        />
+                        {stat.suffix && (
+                          <span className="text-2xl ml-1">{stat.suffix}</span>
+                        )}
+                      </div>
+                      <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mt-2 group-hover:text-blue-500 transition-colors">
+                        {stat.label}
+                      </p>
                     </div>
                   ))}
                 </div>
 
                 <div className="mt-12 p-6 bg-slate-900 rounded-2xl text-white">
                   <p className="text-sm font-medium opacity-80 mb-4 italic">
-                    &quot;RA-PHA delivers continuous health monitoring, predictive insights, and on-demand medical support.&quot; [cite: 8]
+                    &quot;RA-PHA delivers continuous health monitoring,
+                    predictive insights, and on-demand medical support.&quot;
                   </p>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center font-bold">CS</div>
+                    <div className="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center font-bold">
+                      CS
+                    </div>
                     <div>
-                      <div className="text-sm font-bold">Chandra Sekhar Kola</div>
-                      <div className="text-[10px] opacity-60 uppercase">Founder & CEO </div>
+                      <div className="text-sm font-bold">
+                        Chandra Sekhar Kola
+                      </div>
+                      <div className="text-[10px] opacity-60 uppercase">
+                        Founder & CEO{" "}
+                      </div>
                     </div>
                   </div>
                 </div>

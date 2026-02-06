@@ -72,7 +72,7 @@ export default function ContactSection() {
               <p className="text-sm font-bold text-cyan-400 uppercase tracking-widest mb-2">Seed Ask</p>
               <p className="text-xs text-slate-400 leading-relaxed">
                 We are currently seeking ₹70 Lakhs for product development, 
-                marketing, and compliance[cite: 45].
+                marketing, and compliance
               </p>
             </div>
           </motion.div>
@@ -101,9 +101,9 @@ export default function ContactSection() {
               >
                 <option value="" disabled className="bg-slate-900">Choose Your Interest</option>
                 <option value="waitlist" className="bg-slate-900">Join User Waitlist</option>
-                <option value="corporate" className="bg-slate-900">Corporate Wellness Partner [cite: 28]</option>
-                <option value="telemedicine" className="bg-slate-900">Telemedicine Partner [cite: 30]</option>
-                <option value="investment" className="bg-slate-900">Investment Inquiry [cite: 44]</option>
+                <option value="corporate" className="bg-slate-900">Corporate Wellness Partner</option>
+                <option value="telemedicine" className="bg-slate-900">Telemedicine Partner</option>
+                <option value="investment" className="bg-slate-900">Investment Inquiry</option>
               </select>
 
               <textarea

@@ -56,8 +56,7 @@ export default function HeroSection() {
           <p className="text-lg lg:text-xl text-slate-400 font-light leading-relaxed max-w-xl mb-10">
             Transition from reactive treatment to proactive wellness. RA-PHA
             combines **continuous wearable monitoring** and **predictive AI** to
-            deliver on-demand medical support before issues arise[cite: 8, 16,
-            17].
+            deliver on-demand medical support before issues arise
           </p>
 
           {/* DYNAMIC CTA */}
@@ -105,8 +104,7 @@ export default function HeroSection() {
                     </div>
                     <div className="bg-white/5 p-3 rounded-2xl rounded-tl-none text-xs text-slate-300 max-w-[80%]">
                       I've detected an abnormal heart rate trend over the last 4
-                      hours. Would you like to notify your doctor? [cite: 17,
-                      18]
+                      hours. Would you like to notify your doctor?
                     </div>
                   </div>
                   <div className="flex gap-3 flex-row-reverse">
@@ -115,7 +113,6 @@ export default function HeroSection() {
                     </div>
                     <div className="bg-cyan-600 p-3 rounded-2xl rounded-tr-none text-xs text-white max-w-[80%]">
                       Yes, and trigger an Emergency SOS if it exceeds 110 BPM.
-                      [cite: 20]
                     </div>
                   </div>
                 </div>

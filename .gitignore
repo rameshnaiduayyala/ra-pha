@@ -11,7 +11,7 @@ build/
 *.pyc
 
 # Environment Variables & Secrets
-# Highly important for HIPAA compliance and data security [cite: 35, 74]
+# Highly important for HIPAA compliance and data security
 .env
 .env.local
 .env.development.local

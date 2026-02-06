@@ -7,7 +7,7 @@ import { Header } from "./components/header/Header";
 import HeroSection from "./components/HeroSection";
 import SolutionSection from "./components/SolutionSection";
 import TeamSection from "./components/TeamSection";
-import ValidationSection from "./components/ValidationSection";
+// import ValidationSection from "./components/ValidationSection";
 import WhyPhageMatch from "./components/WhyPhageMatch";
 import WorkInProgress from "./components/WorkInProgress";
 

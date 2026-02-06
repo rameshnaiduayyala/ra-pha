@@ -50,7 +50,7 @@ export default function RoadmapStatus() {
                   <span className="text-[10px] font-bold uppercase tracking-widest">Months 0-3</span>
                 </div>
                 <h4 className="font-bold text-slate-900 text-sm">MVP & Beta Testing</h4>
-                <p className="text-xs text-slate-500 mt-1">Refining core AI and wearable integrations[cite: 37].</p>
+                <p className="text-xs text-slate-500 mt-1">Refining core AI and wearable integrations</p>
               </div>
 
               <div className="p-4 bg-white border border-slate-100 rounded-xl shadow-sm">
