@@ -1,125 +1,169 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Linkedin, ExternalLink } from "lucide-react";
+import { 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Linkedin, 
+  Instagram, 
+  Youtube, 
+  Twitter,
+  ChevronRight
+} from "lucide-react";
 import Logo from "../assets/RA-PHA-LOGO1.png";
 
 export default function Footer() {
+  const currentYear = 2026;
+
   return (
-    <footer className="relative bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-slate-400 py-16 px-6 border-t border-slate-800 overflow-hidden">
-      {/* === Background Ambient Glow === */}
-      <div
-        className="absolute inset-0 -z-0 pointer-events-none"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle 600px at 50% -100px, rgba(6,182,212,0.12), transparent 80%)",
-        }}
-      />
+    <footer className="relative bg-[#F8FAFC] border-t border-slate-200 px-6 pt-24 pb-12 font-sans overflow-hidden">
+      {/* Subtle editorial background */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-white to-slate-50" />
 
-      <div className="relative z-10 max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
-        {/* Brand & Overview */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="col-span-1 md:col-span-1"
-        >
-          <div className="flex items-center space-x-2 mb-6">
-            <img src={Logo} alt="RA-PHA" className="h-10" />
-          </div>
-          <p className="text-sm text-slate-400 leading-relaxed">
-            Your body talks. RA-PHA listens.  India’s AI-powered personal healthcare 
-            assistant shifting healthcare from reactive to preventive
-          </p>
-          <div className="flex space-x-4 mt-6">
-            <a href="#" className="hover:text-cyan-400 transition-colors">
-              <Linkedin className="size-5" />
-            </a>
-            <a href="#" className="hover:text-cyan-400 transition-colors">
-              <ExternalLink className="size-5" />
-            </a>
-          </div>
-        </motion.div>
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* ===== Main Grid ===== */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16">
+          
+          {/* Brand & Mission */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col"
+          >
+            <img src={Logo} alt="RA-PHA" className="h-10 w-auto mb-6 self-start" />
 
-        {/* Quick Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          viewport={{ once: true }}
-        >
-          <h4 className="text-white font-semibold mb-6 tracking-wide uppercase text-xs">
-            Platform
-          </h4>
-          <ul className="text-sm space-y-4">
-            <li><a href="#features" className="hover:text-cyan-400 transition-colors">Features</a></li>
-            <li><a href="#how-it-works" className="hover:text-cyan-400 transition-colors">How It Works</a></li>
-            <li><a href="#pricing" className="hover:text-cyan-400 transition-colors">Pricing Plans</a></li>
-            <li><a href="#faq" className="hover:text-cyan-400 transition-colors">FAQ</a></li>
-          </ul>
-        </motion.div>
+            <p className="text-sm text-slate-500 leading-relaxed max-w-xs mb-8">
+              AI-Powered Predictive Healthcare Platform. 
+              Your body talks. RA-PHA listens.
+            </p>
 
-        {/* Contact Information */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <h4 className="text-white font-semibold mb-6 tracking-wide uppercase text-xs">
-            Support
-          </h4>
-          <ul className="text-sm space-y-4">
-            <li className="flex items-center gap-3">
-              <Mail className="size-4 text-cyan-500" />
-              <a href="mailto:contact@ra-pha.health" className="hover:text-cyan-400 transition-colors">
-                contact@ra-pha.health
-              </a>
-            </li>
-            <li className="flex items-center gap-3">
-              <Phone className="size-4 text-cyan-500" />
-              <a href="tel:+919553885666" className="hover:text-cyan-400 transition-colors">
-                +91 79894 19864
-              </a>
-            </li>
-          </ul>
-        </motion.div>
+            {/* Social Links */}
+            <div className="flex items-center gap-5">
+              <SocialIcon href="#" icon={Instagram} label="Instagram" />
+              <SocialIcon href="#" icon={Linkedin} label="LinkedIn" />
+              <SocialIcon href="#" icon={Youtube} label="YouTube" />
+              <SocialIcon href="#" icon={Twitter} label="Twitter (X)" />
+            </div>
+          </motion.div>
 
-        {/* Head Office Location */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          <h4 className="text-white font-semibold mb-6 tracking-wide uppercase text-xs">
-            Head Office
-          </h4>
-          <div className="flex gap-3 text-sm leading-relaxed text-slate-400">
-            <MapPin className="size-5 text-cyan-500 shrink-0" />
-            <p>
-              RA-PHA Private Limited <br />
-              Hyderabad, Telangana<br />
-              India 
+          {/* Quick Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            viewport={{ once: true }}
+          >
+            <h4 className="text-[11px] uppercase font-black text-slate-900 tracking-[0.2em] mb-8">
+              Quick Links
+            </h4>
+            <ul className="space-y-4 text-sm text-slate-500">
+              <FooterLink href="#home" text="Home" />
+              <FooterLink href="#features" text="Features" />
+              <FooterLink href="#pricing" text="Pricing" />
+              <FooterLink href="#about" text="About Us" />
+              <FooterLink href="#contact" text="Contact" />
+              <FooterLink href="#blog" text="Blog" />
+            </ul>
+          </motion.div>
+
+          {/* Legal */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <h4 className="text-[11px] uppercase font-black text-slate-900 tracking-[0.2em] mb-8">
+              Legal
+            </h4>
+            <ul className="space-y-4 text-sm text-slate-500">
+              <FooterLink href="/privacy" text="Privacy Policy" />
+              <FooterLink href="/terms" text="Terms & Conditions" />
+              <FooterLink href="/disclaimer" text="Disclaimer" />
+            </ul>
+          </motion.div>
+
+          {/* Contact Details */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            viewport={{ once: true }}
+          >
+            <h4 className="text-[11px] uppercase font-black text-slate-900 tracking-[0.2em] mb-8">
+              Head Office
+            </h4>
+            <div className="space-y-6">
+              <div className="flex gap-3 text-sm text-slate-500 leading-relaxed">
+                <MapPin className="w-5 h-5 text-cyan-600 shrink-0" />
+                <p>
+                  RA-PHA Health Technologies Pvt. Ltd.<br />
+                  Hyderabad, Telangana, India
+                </p>
+              </div>
+              <div className="flex items-center gap-3 text-sm text-slate-500">
+                <Mail className="w-5 h-5 text-cyan-600" />
+                <a href="mailto:contact@ra-pha.health" className="hover:text-cyan-600 transition-colors font-medium">
+                  contact@ra-pha.health
+                </a>
+              </div>
+              <div className="flex items-center gap-3 text-sm text-slate-500">
+                <Phone className="w-5 h-5 text-cyan-600" />
+                <a href="tel:+919789419864" className="hover:text-cyan-600 transition-colors font-medium">
+                  +91 97894 19864
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* ===== Bottom Copyright ===== */}
+        <div className="mt-24 pt-8 border-t border-slate-200">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+              © {currentYear} RA-PHA. All Rights Reserved.
+            </p>
+            <p className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.3em]">
+              DPIIT Registered Startup · Made in India
             </p>
           </div>
-        </motion.div>
-      </div>
-
-      {/* Footer Bottom / Legal */}
-      <div className="relative z-10 border-t border-slate-800/50 mt-16 pt-8 text-center text-xs text-slate-500">
-        <div className="flex flex-wrap justify-center gap-6 mb-4">
-          <a href="#" className="hover:text-slate-300">Privacy Policy</a>
-          <a href="#" className="hover:text-slate-300">Terms & Conditions</a>
-          <a href="#" className="hover:text-slate-300">Disclaimer</a> 
         </div>
-        <p>
-          © 2026 <span className="text-cyan-400">RA-PHA</span>
-          A DPIIT Registered HealthTech Startup. 
-        </p>
-        <p className="mt-2 text-slate-600">
-          Built for Global Digital Health Excellence · Hyderabad, India
-        </p>
+
+        {/* ===== Legal Disclaimer Section ===== */}
+        <div className="mt-12 pt-8 border-t border-slate-200 max-w-5xl mx-auto text-[10px] text-slate-400 leading-relaxed space-y-4 text-center md:text-left">
+          <p>
+            <span className="font-bold text-slate-500">Medical Disclaimer:</span> RA-PHA is a digital health support platform and does not provide medical diagnoses, treatment, or clinical decision-making. All insights, alerts, and recommendations are for informational purposes only and are not a substitute for professional medical advice. Always consult qualified medical practitioners regarding health conditions. In case of a medical emergency, contact local emergency services immediately.
+          </p>
+          <p>
+            Personal health data is processed securely and in accordance with applicable data protection and privacy regulations. By using this platform, you acknowledge that you understand RA-PHA does not replace licensed healthcare professionals.
+          </p>
+        </div>
       </div>
     </footer>
+  );
+}
+
+/* ===== Helper Components ===== */
+
+function FooterLink({ href, text }) {
+  return (
+    <li className="group">
+      <a href={href} className="flex items-center gap-1 hover:text-cyan-600 transition-all">
+        <ChevronRight className="w-3 h-3 opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+        {text}
+      </a>
+    </li>
+  );
+}
+
+function SocialIcon({ href, icon: Icon, label }) {
+  return (
+    <a
+      href={href}
+      aria-label={label}
+      className="size-9 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-white hover:bg-cyan-600 hover:border-cyan-600 transition-all shadow-sm"
+    >
+      <Icon className="w-4 h-4" />
+    </a>
   );
 }
