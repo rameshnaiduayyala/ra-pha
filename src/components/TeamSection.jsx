@@ -3,6 +3,8 @@ import { Linkedin } from "lucide-react";
 import chandu from "../assets/team/Chandra-sekhar-Kola.jpeg";
 import madhu from "../assets/team/Madhu-Prabhakar-Babu-Gara.jpeg";
 import beulah from "../assets/team/Beulah-Munnangi.jpeg";
+import ramesh from "../assets/team/Ramesh_Ayyala_2.jpg";
+import manasa from "../assets/team/manasa-ghanta1.png";
 
 export default function TeamSection() {
   const members = [
@@ -10,22 +12,36 @@ export default function TeamSection() {
       image: chandu,
       name: "Chandra Sekhar Kola",
       role: "Founder & CEO",
-      desc: "Leads RA-PHA’s vision to move healthcare from episodic treatment to continuous, preventive intelligence.",
-      social: "#",
+      desc: "Leads RA-PHA’s vision to move healthcare from episodic treatment to continuous.",
+      social: "https://www.linkedin.com/in/chandra-sekhar-kola-09579a239/",
     },
     {
       image: madhu,
       name: "Dr. Gara Madhu Prabhakar Babu",
       role: "Medical Co-Founder",
       desc: "Provides clinical oversight for predictive models, telemedicine workflows, and patient safety.",
-      social: "#",
+      social: "https://www.linkedin.com/in/gara-madhu-prabhakar-babu/",
+    },
+    {
+      image: ramesh,
+      name: "Ramesh Ayyala",
+      role: "Chief Technology Officer",
+      desc: "Architects RA-PHA’s core platform, data pipelines, and scalable AI infrastructure.",
+      social: "https://www.linkedin.com/in/ramesh-naidu-ayyala/",
     },
     {
       image: beulah,
       name: "Beulah Munnangi",
-      role: "Strategy & Operations",
-      desc: "Architecting the business model and operational scale-up for national health impact.",
-      social: "#",
+      role: "Chief Financial Officer",
+      desc: "Oversees financial strategy, fundraising, and investor relations to fuel RA-PHA’s growth.",
+      social: "https://www.linkedin.com/in/beulah-munnangi/",
+    },
+    {
+      image: manasa,
+      name: "Manasa Ghanta",
+      role: "Technology & Operations Lead",
+      desc: "Ensures reliable execution across engineering, deployment, and operational excellence.",
+      social: "https://www.linkedin.com/in/manasa-ghanta/",
     },
   ];
 
@@ -115,7 +131,7 @@ export default function TeamSection() {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
           viewport={{ once: true }}
-          className="mt-28 pt-12 border-t border-slate-200 max-w-3xl mx-auto md:text-center"
+          className="mt-28 pt-12 border-t border-slate-200 max-w-6xl mx-auto md:text-center"
         >
           <h4 className="text-lg font-semibold text-slate-900 mb-3">
             Advisory network
