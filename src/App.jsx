@@ -16,7 +16,6 @@ import TargetUsers from "./components/TargetUsers";
 import TeamSection from "./components/TeamSection";
 import TechSection from "./components/TechSection";
 import TestimonialSection from "./components/TestimonialSection";
-// import ValidationSection from "./components/ValidationSection";
 import WhyPhageMatch from "./components/WhyPhageMatch";
 import WorkInProgress from "./components/WorkInProgress";
 
@@ -29,7 +28,6 @@ function App() {
       <WhyPhageMatch />
       <SolutionSection />
       <HowItWorks />
-      {/* <ValidationSection /> */}
       <TechSection />
       <DashboardPreview />
       <TargetUsers />
