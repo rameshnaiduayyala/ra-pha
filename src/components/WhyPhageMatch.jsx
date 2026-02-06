@@ -1,110 +1,166 @@
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { 
+  Heart, 
+  ShieldAlert, 
+  Utensils, 
+  Dumbbell, 
+  Brain, 
+  Stethoscope, 
+  Ambulance,
+  ChevronRight,
+  CheckCircle2
+} from "lucide-react";
 
-export default function WhyRAPHA() {
-  const reasons = [
-    {
-      title: "Unified AI-Driven Platform",
-      desc: "Consolidates fragmented health data into a single intelligent interface for continuous monitoring",
-    },
-    {
-      title: "Early Risk Detection",
-      desc: "Shifts healthcare from reactive treatment to preventive care through predictive analytics",
-    },
-    {
-      title: "Wearable-Agnostic",
-      desc: "Seamlessly integrates with existing devices, ensuring you aren't locked into one ecosystem",
-    },
-    {
-      title: "Compliance-First Design",
-      desc: "Built with a focus on Indian healthcare regulations and private data security",
-    },
-    {
-      title: "24/7 Intelligent Companion",
-      desc: "Provides on-demand medical support and emergency SOS alerts whenever you need them",
-    },
-    {
-      title: "Clinical-Grade Insights",
-      desc: "Leverages a medical co-founder's expertise to deliver evidence-based health guidance",
-    },
-  ];
+const featureGroups = [
+  {
+    title: "Real-Time Health Monitoring",
+    benefit: "Stay informed about your body every day, not once a year.",
+    icon: Heart,
+    color: "text-rose-500",
+    bg: "bg-rose-50",
+    items: ["Heart rate monitoring", "Blood pressure trends", "SpO2 tracking", "Sleep & recovery", "Activity tracking"],
+  },
+  {
+    title: "AI Disease Prediction",
+    benefit: "Know the risk before it becomes a diagnosis.",
+    icon: ShieldAlert,
+    color: "text-amber-500",
+    bg: "bg-amber-50",
+    items: ["Diabetes risk monitoring", "Hypertension alerts", "Heart health analysis", "Obesity prediction", "Stress patterns"],
+  },
+  {
+    title: "AI Diet & Nutrition",
+    benefit: "Eat smarter with an AI diet coach in your pocket.",
+    icon: Utensils,
+    color: "text-emerald-500",
+    bg: "bg-emerald-50",
+    items: ["Weight goal plans", "Diabetes-friendly meals", "BP-friendly nutrition", "Calorie tracking", "Food reminders"],
+  },
+  {
+    title: "Smart Workout Engine",
+    benefit: "Get fit with a plan that adapts to your body.",
+    icon: Dumbbell,
+    color: "text-blue-500",
+    bg: "bg-blue-50",
+    items: ["Home workout schedules", "Fat loss programs", "Muscle building", "Goal tracking", "AI progress monitoring"],
+  },
+  {
+    title: "Mental Wellness Support",
+    benefit: "A calm mind builds a healthy life.",
+    icon: Brain,
+    color: "text-purple-500",
+    bg: "bg-purple-50",
+    items: ["Stress & anxiety tracking", "Sleep improvement", "Mood monitoring", "AI support chatbot", "Daily wellness tips"],
+  },
+  {
+    title: "Telemedicine Support",
+    benefit: "Medical support without long hospital waits.",
+    icon: Stethoscope,
+    color: "text-cyan-500",
+    bg: "bg-cyan-50",
+    items: ["Online consultations", "Report sharing", "Expert prescriptions", "Digital health history"],
+  },
+];
 
+export default function FeaturesSection() {
   return (
-    <section id="why-rapha" className="relative bg-gradient-to-b from-white via-slate-50 to-slate-100 py-24 px-6 overflow-hidden">
-      {/* ===== BACKGROUND WATERMARK ===== */}
-      <div
-        className="absolute inset-0 pointer-events-none -z-0"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle 400px at 70% 20%, rgba(6,182,212,0.1), transparent 70%)",
-        }}
-      />
-      
-      {/* Abstract Medical Pulse/Grid Watermark */}
-      <svg
-        viewBox="0 0 800 600"
-        className="absolute right-[-10%] bottom-[-10%] w-[90%] max-w-none opacity-[0.03] -z-0"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g stroke="rgba(6,182,212,0.4)" strokeWidth="1" fill="none">
-          <path d="M0 300 L150 300 L180 250 L220 350 L250 300 L800 300" />
-        </g>
-      </svg>
-
-      {/* ===== CONTENT ===== */}
-      <div className="relative z-10 max-w-7xl mx-auto">
-        {/* Heading */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="mb-14"
-        >
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Why&nbsp;
-            <span className="bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-600 text-transparent bg-clip-text">
-              RA-PHA
-            </span>{" "}
-            Stands Alone
-          </h2>
-          <p className="text-slate-500 mt-4 max-w-2xl text-lg">
-            Our competitive advantage lies in turning raw data into proactive life-saving intelligence
+    <section id="features" className="py-24 px-6 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        
+        {/* ===== HEADER ===== */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-5xl font-bold text-slate-900 mb-6"
+          >
+            Everything You Need for a <br />
+            <span className="text-cyan-600">Healthier Life — In One App</span>
+          </motion.h2>
+          <p className="text-lg text-slate-600">
+            RA-PHA combines medical intelligence, lifestyle analytics, and emergency 
+            care support into a single powerful platform.
           </p>
-        </motion.div>
-
-        {/* Reasons Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {reasons.map((reason, i) => (
-            <motion.div
-              key={reason.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1, duration: 0.6 }}
-              viewport={{ once: true }}
-              className="relative bg-white/80 backdrop-blur-md border border-slate-200 rounded-3xl p-8 hover:shadow-[0_20px_40px_rgba(6,182,212,0.1)] hover:border-cyan-300 transition-all duration-300 group"
-            >
-              <div className="mb-4 w-10 h-10 flex items-center justify-center text-white bg-cyan-500 rounded-xl shadow-lg shadow-cyan-200 group-hover:scale-110 transition-transform">
-                <Check className="w-6 h-6" />
-              </div>
-              <h3 className="font-bold text-xl mb-3 text-slate-900 leading-snug">
-                {reason.title}
-              </h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                {reason.desc}
-              </p>
-            </motion.div>
-          ))}
         </div>
 
-        {/* Vision Statement Footer */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="mt-16 text-center text-slate-400 text-sm italic"
-        >
-          &quot;{reasons[1].desc}&quot; — Focused on the future of Indian HealthTech
-        </motion.div>
+        {/* ===== GRID ===== */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featureGroups.map((group, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.1 }}
+              viewport={{ once: true }}
+              className="group p-8 rounded-[2rem] border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-2xl hover:shadow-cyan-900/5 transition-all duration-500"
+            >
+              <div className={`w-14 h-14 ${group.bg} ${group.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                <group.icon className="w-7 h-7" />
+              </div>
+
+              <h3 className="text-xl font-bold text-slate-900 mb-2">{group.title}</h3>
+              <p className="text-sm font-semibold text-cyan-700 mb-6 leading-relaxed italic">
+                “{group.benefit}”
+              </p>
+
+              <ul className="space-y-3">
+                {group.items.map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-slate-500 text-sm">
+                    <CheckCircle2 className={`w-4 h-4 ${group.color} opacity-70`} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+
+          {/* ===== SPECIAL SOS CARD ===== */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="lg:col-span-3 mt-8 p-8 md:p-12 rounded-[2.5rem] bg-rose-600 text-white relative overflow-hidden"
+          >
+            {/* Background pattern */}
+            <div className="absolute inset-0 opacity-10 pointer-events-none">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+            </div>
+
+            <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-8">
+                  <Ambulance className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-3xl font-bold mb-4">SOS Emergency Ambulance Support</h3>
+                <p className="text-rose-100 text-lg mb-8 max-w-md">
+                  Instant emergency help when every second matters. RA-PHA can help save lives when emergencies strike.
+                </p>
+                <div className="grid grid-cols-2 gap-4">
+                   {["One-tap alert", "Live location", "Ambulance booking", "Contact alerts"].map((text) => (
+                     <div key={text} className="flex items-center gap-2 text-sm font-medium bg-white/10 py-2 px-4 rounded-full">
+                       <div className="w-1.5 h-1.5 bg-white rounded-full" /> {text}
+                     </div>
+                   ))}
+                </div>
+              </div>
+              <div className="hidden lg:flex justify-center">
+                <div className="w-64 h-64 border-8 border-white/20 rounded-full flex items-center justify-center animate-pulse">
+                   <div className="w-48 h-48 bg-white text-rose-600 rounded-full flex flex-col items-center justify-center font-black shadow-2xl">
+                      <span className="text-5xl">SOS</span>
+                      <span className="text-[10px] tracking-widest uppercase">Emergency</span>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* ===== BOTTOM CTA ===== */}
+        <div className="mt-20 flex flex-col items-center">
+          <button className="flex items-center gap-2 px-8 py-4 bg-slate-900 text-white font-black uppercase text-xs tracking-[0.2em] rounded-full hover:bg-cyan-600 transition-all group">
+            See How It Works
+            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </button>
+        </div>
       </div>
     </section>
   );
